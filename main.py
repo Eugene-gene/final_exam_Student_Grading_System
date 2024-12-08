@@ -251,7 +251,7 @@ class StudentGradingSystem(QWidget):
             self.student_table.setSortingEnabled(True)                                  # to activate the sorting
 
             # Set column widths (you can adjust the width of each column here)
-            column_widths = [100, 100, 130] + [80] * len(self.subjects) + [100, 100]    # Example widths
+            column_widths = [150, 100, 130] + [80] * len(self.subjects) + [100, 100]    # Example widths
 
             for i, width in enumerate(column_widths):                                   # para sa bawat column
                 self.student_table.setColumnWidth(i, width)                             
