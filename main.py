@@ -411,7 +411,7 @@ class StudentGradingSystem(QWidget):
                 self.student_table.setItem(row, len(self.subjects) + 4, QTableWidgetItem(letter_grade))
 
                 for i, subject in enumerate(self.subjects):
-                    self.student_table.setItem(row, i + 3, QTableWidgetItem(str(data["grades"][subject])))
+                    self.student_table.setItem(row, i + 3, QTableWidgetItem(str(data["grades"][subject])))              # i + 3 mag sisimula ang column na mag lagay na mga numbers
 
     def get_letter_grade(self, avg_grade):
         """Return the letter grade based on the average grade"""
@@ -763,10 +763,10 @@ class StudentGradingSystem(QWidget):
         elif self.user_role == "student":
             # Student should only be able to search for their own name, not other students
             student_name = self.search_input.text().strip()
-            if student_name != self.username:  # If the name doesn't match, show an error
+            if student_name != self.username:           # If the name doesn't match, show an error
                 self.report_text_edit.setText("This is not your data. Please enter your name to view your grades.")
             else:
-                self.show_grades()  # Show grades if the name matches their username
+                self.show_grades()              # Show grades if the name matches their username
             
     def show_error(self, message):
         """Show error message in a pop-up"""
@@ -774,7 +774,7 @@ class StudentGradingSystem(QWidget):
 
     def clear_form(self):
         """Clear all form inputs"""
-        self.student_name_input.clear()
+        self.student_name_input.clear()                     # mag cleclear ang input name
         self.course_input.clear()
         self.semester_select.setCurrentIndex(0)
         for grade_input in self.grade_inputs.values():
